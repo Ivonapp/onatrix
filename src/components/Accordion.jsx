@@ -9,6 +9,7 @@ const toggleAccordion = () => {
 }
   return (
   
+    
     <div className ="accordion-item">
     <div className={`item-titlebar ${isOpen ? 'active': ''}`} onClick={toggleAccordion}>
     <div className="accordion-title">{item.title}</div>
@@ -25,6 +26,7 @@ const toggleAccordion = () => {
           )
         }
     </div>
+
   )
 }
 
