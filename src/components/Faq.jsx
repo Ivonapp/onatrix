@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AccordionItem from './Accordion'
 
+
 const Faq = () => {
     const [accordionfaq, setAccordionfaq] = useState([])
   
@@ -18,13 +19,20 @@ const Faq = () => {
     return (
     <div>
 
+ <div className="container"> 
+
+       
+
+<div className="accordion-wrapper">
 {
     accordionfaq.map(item => (
         <AccordionItem key={item.id} item={item} />
-    ))
-}
-
+                
+                ))
+            }
+        </div>
     </div>
+</div>
   )
 }
 
