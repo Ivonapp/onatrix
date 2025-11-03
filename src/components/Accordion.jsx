@@ -1,39 +1,20 @@
+import React from 'react'
 
-import React, {useState} from 'react'
-
-
-function Accordion() {
-
+const AccordionItem = ({item}) => {
   return (
-        
-                  <div className="container">
-                  <div className="faq">
-
-                    <div className="faq-cards">
-                    <div className="questions">
-                    <p>FRÅGA</p>
-                    <button className="btn-round">
-                    <i className="bi bi-chevron-down"></i>
-                    </button>
-                    </div>
-                    <div className="answer"> 
-                    SVAR
-                </div>
-
-                    <div className="faq-cards"> 
-                    <div className="questions">
-                    <p>FRÅGA</p>
-                    <button className="btn-round">
-                    <i className="bi bi-chevron-down"></i>
-                    </button>
-                    </div>
-                    <div className="answer"> 
-                    SVAR
-                </div>
-            </div>
-        </div>
+    <div className ="accordion-item">
+    <div className="item-titlebar">
+    <h3>{item.title}</h3>
+    <div className="btn btn-accordion">
+      <i className="item-icon fa-solid fa-chevron-down"></i>
     </div>
-</div>
+    </div>
+      <p className="item-content">
+        {item.description}
+      </p>
+      
+      </div>
   )
 }
+
 export default Accordion
