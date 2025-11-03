@@ -17,4 +17,4 @@ const AccordionItem = ({item}) => {
   )
 }
 
-export default Accordion
+export default AccordionItem

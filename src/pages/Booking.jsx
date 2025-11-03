@@ -3,7 +3,7 @@ import HeroSmall from '../components/HeroSmall'
 import Titlelayout from '../components/Titlelayout'
 import Chooseus from '../components/Chooseus'
 import Greentext from '../components/Greentext'
-import Accordion from '../components/Accordion'
+import Faq from '../components/Faq'
 import Formpage from '../components/Formpage'
 
 const Booking = () => {
@@ -25,7 +25,7 @@ const Booking = () => {
       greeningresse ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi non sodales augue. Phasellus eget elit gravida."
       />
 
-      <Accordion />
+      <Faq />
 
     </div>
   )
