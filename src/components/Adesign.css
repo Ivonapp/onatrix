@@ -732,12 +732,13 @@ padding-top: 5rem;
   font-weight: 800;
 }
 .testimonials-comment {
-  margin-top: 90px; 
+  margin-top: 50px; 
   font-size: 18px;
   font-weight: 500;
   text-align: left;
   width: 100%;
   padding-left: 30px;
+  padding-right: 30px;
 }
 .testimonials-customer {
   display: flex;
@@ -752,6 +753,10 @@ padding-top: 5rem;
   flex-direction: column;
   justify-content: center;
   gap: 0;
+}
+.testimonial-stars {
+ margin-top: 20px;
+ margin-left: 30px;
 }
 /*TESTIMONIALS END*/
 

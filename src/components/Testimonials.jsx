@@ -39,7 +39,9 @@ const Testimonials = () => {
             <div className="testimonial-box">
               <div className="testimonials-wrap">
                
+               <div className="testimonial-stars">
                 <Testimonialsstar starRating={item.rating} />
+              </div>
               </div>
 
               <div className="testimonials-comment">{item.comment}</div>
