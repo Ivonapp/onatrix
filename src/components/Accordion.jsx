@@ -8,7 +8,6 @@ const toggleAccordion = () => {
   setIsOpen(!isOpen)
 }
   return (
-  
     
     <div className ="accordion-item">
     <div className={`item-titlebar ${isOpen ? 'active': ''}`} onClick={toggleAccordion}>
