@@ -902,6 +902,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding-top: 4rem;
+gap: 1rem;
 }
 .testimonials-yellow-title {
 color: var(--orange-primary-color);
