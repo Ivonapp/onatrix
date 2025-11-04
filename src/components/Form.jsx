@@ -14,41 +14,86 @@ const CustomerForm = () => {
                 const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
 
 
+
+
         const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
 
+        automaticValidation(name, value)
+        }
+    
 
-        /*ERROR HANTERING*/
-        if (value.trim() === '') { /*Om kund lämnar tomma fält*/
-            setErrors(prevErrors =>  ({...prevErrors, [name]: `Please fill in ${name}`}))
-        } 
-        else {
-             setErrors(prevErrors =>  ({...prevErrors, [name]: ''}))
+        /*(regular expression) HANTERAR DET KUNDEN SKRIVER I REALTID*/
+        const automaticValidation = (name, value) => {
+            let error = ''
+
+            if (name === 'name' && !/^[A-Öa-ö\s\-]{2,}$/.test(value)) {
+                error = "Your name can only contain letters."
+            }
+
+            else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                error = "Must be a valid email. (e.g. email@domain.com)"
+            }
+
+            else if (name === 'phoneNumber' && !/^\+?\d+$/.test(value)) {
+                error = "Must be a valid phone number."
+            }
+
+            else if (name === 'subject' && !/^[A-Öa-ö0-9\,].+$/.test(value)) {
+                error = "Can't be left empty."
+            }
+
+            else if (name === 'comment' && !/^[A-Öa-ö0-9\,].+$/.test(value)) {
+                error = "Can't be left empty."
+            }
+
+            setErrors(prevErrors => ({...prevErrors, [name]: error}))
         }
 
-        /*HÄR SKA VI ANVÄNDA REGEX (regular expression)*/
-        /*if (name === 'email') {
 
-        if (!value.includes('@')) {
-        setErrors(prev => ({ ...prev, email: 'Vänligen ange en giltig e-postadress.' }));
-        } else {
-        setErrors(prev => ({ ...prev, email: '' }));
-        }
-        }*/
-        /*ERROR HANTERING FÖR TELEFONNUMMER*/
-        /*if (name === 'phoneNumber') {
-        
-        if (!value.includes('@')) {
-        setErrors(prev => ({ ...prev, phoneNumber: 'Vänligen ange ett giltigt telefonnummer.' }));
-        } else {
-        setErrors(prev => ({ ...prev, phoneNumber: '' }));
-        }
-        }
-        
-} ta bort denna sen       */
+        /*(regular expression) HANTERAR DET KUNDEN SKRIVER*/
+        const validateForm = () => {
+            const newErrors = {}
 
-    }
+        if (!formData.name.trim()) {
+            newErrors.name = "Can't be left empty."
+        } else if (!/^[A-Öa-ö\s\-]+$/.test(formData.name)) {
+            newErrors.name = "Your name can only contain letters."
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = "Can't be left empty."
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = "Must be a valid email. (e.g. email@domain.com)"
+        }
+
+       if (!formData.phoneNumber.trim()) {
+            newErrors.phoneNumber = "Can't be left empty."
+        } else if (!/^\+?\d+$/.test(formData.phoneNumber)) {
+            newErrors.phoneNumber = "Must be a valid phone number."
+        }
+
+        if (!formData.subject.trim()) {
+            newErrors.subject = "Can't be left empty."
+        } else if (!/^[A-Öa-ö0-9\,].+$/.test(formData.subject)) {
+            newErrors.subject = "Can't be left empty."
+        }
+
+        if (!formData.comment.trim()) {
+            newErrors.comment = "Can't be left empty."
+        } else if (!/^[A-Öa-ö0-9\,].+$/.test(formData.comment)) {    
+            newErrors.comment = "Can't be left empty."    
+        }
+
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0;
+        }
+    
+
+
+
+
 
     const handleOk = () => { /*NÄR KUNDEN TRYCKER PÅ OK-KNAPPEN SÅ FÖRSVINNER Kund-respons RUTAN*/
         setSubmitted(false)
@@ -58,20 +103,11 @@ const CustomerForm = () => {
     const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
         e.preventDefault() 
 
-        const newErrors = {}
-        Object.keys(formData).forEach(field => {
-                if (formData[field].trim() === '') {
-                    newErrors[field] = `Please fill in ${field}`
-                }
-        })
-
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors)
-            return
+        if (validateForm()) {
+            console.log('form valid')
         }
 
 
-        /*alert('form submitted successfully')*/
 
 
         /*FETCH HÄR*/
@@ -127,7 +163,7 @@ const CustomerForm = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="input"
-                                placeholder="name"/>
+                                placeholder="Name"/>
                                 <span className="error-message">{errors.name && errors.name}</span>
                                 </div>
                                         
@@ -154,7 +190,7 @@ const CustomerForm = () => {
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
                                 className="input"
-                                placeholder="phoneNumber"/>
+                                placeholder="Phone number"/>
                                 <span className="error-message">{errors.phoneNumber && errors.phoneNumber}</span>
                                         </div>
                                         </div>
