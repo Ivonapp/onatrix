@@ -731,13 +731,6 @@ padding-top: 5rem;
   font-size: 16px;
   font-weight: 800;
 }
-.testimonials-stars {
-  display: flex;
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  gap: 5px;
-}
 .testimonials-comment {
   margin-top: 90px; 
   font-size: 18px;
