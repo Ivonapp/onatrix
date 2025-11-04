@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import Testimonialstitle from './Testimonialstitle'
 import Testimonialsstar from './Testimonialsstar'
+import Teckenicon from '../assets/images/Teckenicon.svg'
 
 
 
@@ -55,6 +56,9 @@ const Testimonials = () => {
                   <h5 className="testimonials-title">{item.name}</h5>
                   <p className="customeringress">{item.companyName}</p>
                 </div>
+                                <div className="testimonials-icon-yellow"> 
+                                    <img src={Teckenicon} alt="Logotyp" className="logo" /> 
+                                </div>
               </div>
             </div>
           </div>
