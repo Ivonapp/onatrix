@@ -742,11 +742,17 @@ padding-top: 5rem;
 }
 .testimonials-customer {
   display: flex;
+  margin-top: auto;
   padding-left: 30px;
   align-items: center;
   gap: 10px;
   margin-top: auto;
   margin-bottom: 30px;
+  width: 90%;
+}
+.testimonials-icon-yellow {
+  margin-left: auto;
+  align-self: end;
 }
 .testimonials-customer .text-sections, .text-sections {
   display: flex;
