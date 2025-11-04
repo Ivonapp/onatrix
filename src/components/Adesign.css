@@ -919,6 +919,7 @@ color: var(--white-color);
 
 .subscribe-respons {
 color: red;
+  border: 1px solid red;
 }
 .error-message {
   color: red;
@@ -928,6 +929,15 @@ color: red;
   margin-top: 4px;
 }
 
+.input {
+  border: 1px solid #ccc; /* vanlig border */
+  padding: 8px;
+  border-radius: 4px;
+}
+.input-error {
+  border: 2px solid red; /* border blir röd vid fel */
+  background-color: #fff0f0; /* valfritt: lite ljus röd bakgrund */
+}
 /*ERROR END*/
 
 
