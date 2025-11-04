@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroSmall from '../components/HeroSmall'
 import Socialmediapage from '../components/Socialmediapage'
-import Accordion from '../components/Accordion'
+import Faq from '../components/Faq'
 import Formpage from '../components/Formpage'
 import Titlelayout from '../components/Titlelayout'
 
@@ -20,7 +20,7 @@ const ContactUs = () => {
       />
       <Formpage />
       <Socialmediapage />
-      <Accordion />
+      <Faq />
 
     </div>
   )

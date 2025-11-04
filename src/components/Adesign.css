@@ -731,28 +731,28 @@ padding-top: 5rem;
   font-size: 16px;
   font-weight: 800;
 }
-.testimonials-stars {
-  display: flex;
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  gap: 5px;
-}
 .testimonials-comment {
-  margin-top: 90px; 
+  margin-top: 50px; 
   font-size: 18px;
   font-weight: 500;
   text-align: left;
   width: 100%;
   padding-left: 30px;
+  padding-right: 30px;
 }
 .testimonials-customer {
   display: flex;
+  margin-top: auto;
   padding-left: 30px;
   align-items: center;
   gap: 10px;
   margin-top: auto;
   margin-bottom: 30px;
+  width: 90%;
+}
+.testimonials-icon-yellow {
+  margin-left: auto;
+  align-self: end;
 }
 .testimonials-customer .text-sections, .text-sections {
   display: flex;
@@ -760,34 +760,74 @@ padding-top: 5rem;
   justify-content: center;
   gap: 0;
 }
+.testimonial-stars {
+ margin-top: 20px;
+ margin-left: 30px;
+}
 /*TESTIMONIALS END*/
 
-/*ACCORDION*/
-.questions {
-  font-weight: 800;
-  border-radius: 5px;
-  background-color:#ECECEC;
+/*ACCORDION och FAQ*/
+.faq-wrapper {
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
-  padding: 0.5rem;
 }
-.questions:hover {
-  background-color: var(--orange-primary-color)
+.accordion-wrapper {
+  display: flex;
+   flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
 }
-.answer {
-  border-radius: 5px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+.accordion-item {
+  width: 800px;
 }
-.answer.open {
-  max-height: 500px;
+.item-titlebar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #ececec;
+padding: 1rem;
+border-radius: 5px;
+margin: 0.2rem;
 }
-.btn-round {
-  border: 0;
+.item-titlebar:hover{
+background-color: var(--orange-primary-color);
+}
+.accordion-title {
+  font-size: 1rem; 
+  font-weight: 800;
+}
+.btn-accordion {
+color: black;
+}
+.item-content {
+padding: 1rem;
+}
+.accordion-left {
+  display: flex;
+  border: 2px solid red;
+  text-align: left;
 }
 /*ACCORDION END*/
+
+/*ACCORDIONTITLE*/
+.accordion-left {
+display: flex;
+flex-direction: column;
+}
+.accordion-yellow-title {
+color: var(--orange-primary-color);
+margin-top: 3rem;
+}
+.accordion-green-title{
+  margin-bottom: 0.5rem;
+}
+.accordion-ingress{
+  margin-bottom: 0.5rem;
+}
+
+/*ACCORDIONTITLE END*/
+
 
 /*FORM*/
 .form-container {
@@ -862,6 +902,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding-top: 4rem;
+gap: 1rem;
 }
 .testimonials-yellow-title {
 color: var(--orange-primary-color);
