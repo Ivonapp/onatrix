@@ -1,6 +1,8 @@
 
 import React, {useState, useEffect} from 'react'
 import Testimonialstitle from './Testimonialstitle'
+import Testimonialsstar from './Testimonialsstar'
+
 
 
 const Testimonials = () => {
@@ -37,7 +39,7 @@ const Testimonials = () => {
             <div className="testimonial-box">
               <div className="testimonials-wrap">
                
-                <div className="testimonials-stars">{item.rating}</div>
+                <Testimonialsstar starRating={item.rating} />
               </div>
 
               <div className="testimonials-comment">{item.comment}</div>
