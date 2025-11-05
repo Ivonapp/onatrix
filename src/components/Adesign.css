@@ -932,21 +932,16 @@ color: red;
 /*ERROR END*/
 
 
-
-
 /*BLOGACCORDION*/
 .blog-accordion-item {
   display: flex;
   flex-direction: column;
 }
 .item-blog-title {
-  order: 2; /* Gör så "Read more →" hamnar längst ner */
+  order: 2;
 }
 .blog-content {
-  order: 1; /* Gör så beskrivningen hamnar ovanför */
-   white-space: nowrap;       /* all text på en rad */
-  overflow: hidden;          /* döljer texten som inte får plats */
-  text-overflow: ellipsis;   /* visar … där texten är avklippt */
+  order: 1;
 }
 /*BLOGACCORDION END*/
 

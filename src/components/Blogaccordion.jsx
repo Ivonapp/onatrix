@@ -14,21 +14,11 @@ const toggleblog = () => {
     
     <div className ="blog-accordion-item">
     <div className={`item-blog-title ${isOpen ? 'active': ''}`} onClick={toggleblog}>
-
+    {isOpen ? item.description : item.description.substring(0, 100) + '...'}
     <div className="column-yellow-ingress"> {isOpen ? 'Read less' : 'read more →'}</div>
   
 
     </div>
-    
-
-    
-      {
-      isOpen && ( 
-      <p className="blog-content">
-        {item.description}
-      </p>
-          )
-        }
 
     </div>
   )
