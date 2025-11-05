@@ -929,16 +929,26 @@ color: red;
   margin-top: 4px;
 }
 
-.input {
-  border: 1px solid #ccc; /* vanlig border */
-  padding: 8px;
-  border-radius: 4px;
-}
-.input-error {
-  border: 2px solid red; /* border blir röd vid fel */
-  background-color: #fff0f0; /* valfritt: lite ljus röd bakgrund */
-}
 /*ERROR END*/
+
+
+
+
+/*BLOGACCORDION*/
+.blog-accordion-item {
+  display: flex;
+  flex-direction: column;
+}
+.item-blog-title {
+  order: 2; /* Gör så "Read more →" hamnar längst ner */
+}
+.blog-content {
+  order: 1; /* Gör så beskrivningen hamnar ovanför */
+   white-space: nowrap;       /* all text på en rad */
+  overflow: hidden;          /* döljer texten som inte får plats */
+  text-overflow: ellipsis;   /* visar … där texten är avklippt */
+}
+/*BLOGACCORDION END*/
 
 
 
