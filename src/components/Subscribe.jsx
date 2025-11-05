@@ -80,7 +80,6 @@ const Subscribe = () => {
     if (submitted) {
         return (
             <div className="Kund-respons-email">
-                <h2>Thank you!</h2>
                 <p>You are now subscribing to our weekly newsletter.</p>
                 <Buttondark text="OK" onClick={handleOk} />
             </div>
