@@ -185,7 +185,6 @@ color: var(--green-primary-color);
     color: var(--green-primary-color);
     border-radius: 5px 5px 5px 5px;
     text-decoration: none;
-    transition: background 0.15s ease-in-out;
   }
   .search-mobile-button:hover,
 .orange-subscribe-button:hover {
@@ -211,7 +210,7 @@ color: var(--green-primary-color);
 .input-wrapper input {
   height: 50px;
   width: 100%;
-  min-width: 600px;
+  min-width: 400px;
   padding-left: 35px;
   border-radius: 5px 5px 5px 5px;
   border: none; 
@@ -810,7 +809,6 @@ padding: 1rem;
 }
 .accordion-left {
   display: flex;
-  border: 2px solid red;
   text-align: left;
 }
 /*ACCORDION END*/
@@ -880,15 +878,6 @@ textarea {
   resize: none;
   font-family: 'urbanist', sans-serif;
 }
-.Kund-respons {
-  display: flex; 
-  border-radius: 10px;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
- flex-direction: column;
-  background-color: var(--light-green-headline-color);
-}
 /*FORM END*/
 
 /*FORMPAGE*/
@@ -920,23 +909,6 @@ color: var(--white-color);
 }
 /*TESTIMONIALS END*/
 
-/*ERROR*/
-
-.subscribe-respons {
-color: red;
-  border: 1px solid red;
-}
-.error-message {
-  color: red;
-  font-size: 0.8rem;
-  height: 1em;
-  display: block;
-  margin-top: 4px;
-}
-
-/*ERROR END*/
-
-
 /*BLOGACCORDION*/
 .blog-accordion-item {
   display: flex;
@@ -949,6 +921,48 @@ color: red;
   order: 1;
 }
 /*BLOGACCORDION END*/
+
+/*ERROR FORM*/
+.Kund-respons {
+  display: flex; 
+  border-radius: 10px;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+ flex-direction: column;
+  background-color: var(--light-green-headline-color);
+}
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  height: 1em;
+  display: block;
+  margin-top: 4px;
+}
+/*ERROR FORM END*/
+
+/*ERROR SUBSCRIBE*/
+.Kund-respons-email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--logoipsum-color);
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+.subscribe-error-message {
+  color: red;
+  padding-left: 2rem;
+  font-size: 0.9rem;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/*ERROR END*/
+
 
 
 
