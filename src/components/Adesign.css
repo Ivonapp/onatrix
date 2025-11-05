@@ -943,6 +943,20 @@ color: var(--white-color);
 }
 /*ERROR FORM END*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ERROR SUBSCRIBE*/
 .Kund-respons-email {
   display: flex;
@@ -955,16 +969,8 @@ color: var(--white-color);
 }
 .subscribe-error-message {
   color: red;
-  padding-left: 20rem;
+  padding-left: 1rem;
   font-size: 0.9rem;
-  border: 2px solid red;
-}
-.subscribe-btn-placeholder-container {
-  border: 2px solid blue;
 }
 
 /*ERROR END*/
-
-
-
-
