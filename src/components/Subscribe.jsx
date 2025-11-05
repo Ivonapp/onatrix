@@ -1,46 +1,93 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import Buttondark from './Buttondark'
 
 
 const Subscribe = () => {
-const [formData, setFormData] = useState ({ email: '', })
+      const [formData, setFormData] = useState({
+      email: ''
+      })
+      const [errors, setErrors] = useState({})
+      const [submitted, setSubmitted] = useState(false) /*rutan som bekräftar att allt är bra efter att kund submittat*/
 
 
-const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({...formData, [name]: value })
-}
-const handleSubmit = async (e) => {
-  e.preventDefault()
+        const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
+        const { name, value } = e.target
+        setFormData({...formData, [name]: value})
 
-if (!formData.email.includes('@') || formData.email.trim() === '') {
-    alert('Vänligen ange en giltig e-postadress.');
-    setEmailError(true);
-    return;
-  }
+        automaticValidation(name, value)
+        }
+
+        /*(regular expression) HANTERAR DET KUNDEN SKRIVER I REALTID*/
+        const automaticValidation = (name, value) => {
+            let error = ''
+
+            if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                error = "Must be a valid email. (e.g. email@domain.com)"
+            }
+
+            setErrors(prevErrors => ({...prevErrors, [name]: error}))
+        }
+
+        /*(regular expression) HANTERAR DET KUNDEN SKRIVER*/
+        const validateForm = () => {
+            const newErrors = {}
+
+        if (!formData.email.trim()) {
+            newErrors.email = "Can't be left empty."
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = "Must be a valid email. (e.g. email@domain.com)"
+        }
+
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0;
+        }
+
+        const handleOk = () => { /*NÄR KUNDEN TRYCKER PÅ OK-KNAPPEN SÅ FÖRSVINNER Kund-respons RUTAN*/
+        setSubmitted(false)
+        }
+
+        const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
+        e.preventDefault() 
+
+        if (validateForm()) {
+            console.log('form valid')
+        }
+
+/*FETCH HÄR*/
+          const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/subscribe', {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+
+          })
 
 
-const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/subscribe', {
-  method: 'post',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(formData)
-
-})
-      if (res.ok) {
-        console.log('allt lyckades')
-        alert('allt lyckades')
-        setFormData({ email: '' });
-        
-      }
-      else {
-      console.log('Något gick fel')
-      alert('Vänligen kontrollera att du fyllt i din email korrekt')
-      }
+            console.log('Status:', res.status) 
+            console.log('Response OK:', res.ok)
 
 
-}
+        /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
+        if (res.ok) {
+            setSubmitted(true)
+            setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
+                    email: ''
+                    })
+                  }
+              }
+    
+    if (submitted) {
+        return (
+            <div className="Kund-respons-email">
+                <h2>Thank you!</h2>
+                <p>You are now subscribing to our weekly newsletter.</p>
+                <Buttondark text="OK" onClick={handleOk} />
+            </div>
+        )
+    }
+
+
   return (
 
 <div className="subscribe-color">
@@ -57,27 +104,26 @@ const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/subs
                 </div>
                 </div>
 
-
-                <form className="search-row" onSubmit={handleSubmit} noValidate>
+      <form className="search-row" onSubmit={handleSubmit} noValidate>
 
                 <div className="input-wrapper">
                 <input
                 type="text"
                 name="email"
                 className="input"
-                placeholder="Enter your email"
-                value={formData.email} onChange={handleInputChange} required
-                />
-                
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"/>
+                <span className="subscribe-error-message">{errors.email && errors.email}</span>
                 </div>
                         <Buttondark
                         text="submit"
                         />
                 </form>
             </div>
-        </div>
-    </div>
-    </div>
+          </div>
+      </div>
+  </div>
   )
 }
 export default Subscribe
