@@ -173,6 +173,7 @@ color: var(--green-primary-color);
   align-items: center;
   flex-direction: column;
   padding: 30px;
+
 }
 .orange-subscribe-button,
 .search-mobile-button {
@@ -197,6 +198,7 @@ color: var(--green-primary-color);
   width: 100%;
   gap: 30px;  /*MELLANRUMMET MELLAN KNAPPEN OCH RUBRIKEN*/
 }
+
 .search-row {
   display: flex;
   align-items: center;
@@ -953,14 +955,14 @@ color: var(--white-color);
 }
 .subscribe-error-message {
   color: red;
-  padding-left: 2rem;
+  padding-left: 20rem;
   font-size: 0.9rem;
+  border: 2px solid red;
 }
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.subscribe-btn-placeholder-container {
+  border: 2px solid blue;
 }
+
 /*ERROR END*/
 
 
