@@ -215,6 +215,7 @@ color: var(--green-primary-color);
   border: none; 
   border: 2px solid var(--orange-primary-color);
 }
+
 /*SUBSCRIBE END*/
 
 /*FOOTER END*/
@@ -929,14 +930,13 @@ color: red;
   margin-top: 4px;
 }
 
-.input {
-  border: 1px solid #ccc; /* vanlig border */
-  padding: 8px;
-  border-radius: 4px;
+.subscribe-btn-placeholder-container {
+ display: flex;
+ align-items: center;
 }
-.input-error {
-  border: 2px solid red; /* border blir röd vid fel */
-  background-color: #fff0f0; /* valfritt: lite ljus röd bakgrund */
+.subscribe-error-message {
+  display: flex;
+  gap: 0.5rem; /* avstånd mellan input, knapp och felmeddelande */
 }
 /*ERROR END*/
 

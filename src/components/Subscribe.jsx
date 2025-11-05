@@ -102,9 +102,9 @@ const Subscribe = () => {
                  Subscribe to our newsletter to receive early discount offers, updates and info
                 </div>
                 </div>
-
+ <div className="subscribe-btn-placeholder-container">
       <form className="search-row" onSubmit={handleSubmit} noValidate>
-
+           
                 <div className="input-wrapper">
                 <input
                 type="text"
@@ -113,13 +113,14 @@ const Subscribe = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"/>
-                <span className="subscribe-error-message">{errors.email && errors.email}</span>
                 </div>
                         <Buttondark
                         text="submit"
                         />
                 </form>
-            </div>
+                </div>
+                </div>
+                <span className="subscribe-error-message">{errors.email && errors.email}</span>
           </div>
       </div>
   </div>
