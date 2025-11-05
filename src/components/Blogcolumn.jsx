@@ -21,6 +21,7 @@ const Blogcolumn = () => {
     {serviceItems.map(item => (
     <div key={item.id} className="column-wrapper">
     <div className="column-green-1">
+<div className="blog-accordion-wrapper-closed">
 <div className="column-img">
         <img src={item.imageUrl} />
     </div>
@@ -29,9 +30,11 @@ const Blogcolumn = () => {
         <i className="bi bi-calendar-range"></i>
           <span className="kalender-text">{item.created}</span></div>
               <h6 className="column-title">{item.title}</h6>
+            </div>
 
+<div className="blog-accordion-wrapper-open">
               <Blogaccordion item={item} />
-              
+                  </div>
                 </div>
             </div>
           ))}
