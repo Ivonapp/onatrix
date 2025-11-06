@@ -8,7 +8,7 @@ const Subscribe = () => {
       })
       const [errors, setErrors] = useState({})
       const [submitted, setSubmitted] = useState(false) /*rutan som bekräftar att allt är bra efter att kund submittat*/
-
+      const [submitAttempted, setSubmitAttempted] = useState(false);
 
         const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
         const { name, value } = e.target
@@ -48,6 +48,8 @@ const Subscribe = () => {
 
         const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
         e.preventDefault() 
+        setSubmitAttempted(true);
+
 
         if (validateForm()) {
             console.log('form valid')
@@ -72,8 +74,8 @@ const Subscribe = () => {
         if (res.ok) {
             setSubmitted(true)
             setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
-                    email: ''
-                    })
+                    email: ''})
+            setSubmitAttempted(false);
                   }
               }
     
@@ -102,16 +104,14 @@ const Subscribe = () => {
                  Subscribe to our newsletter to receive early discount offers, updates and info
                 </div>
                 </div>
-
- <div className="subscribe-btn-placeholder-error-container">
- <div className="subscribe-btn-placeholder-container">
+      <div className="subscribe-btn-placeholder-container">
       <form className="search-row" onSubmit={handleSubmit} noValidate>
            
                 <div className="input-wrapper">
                 <input
                 type="text"
                 name="email"
-                className="input"
+                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*Denna raden är med chatgpt*/
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"/>
@@ -119,14 +119,10 @@ const Subscribe = () => {
                         <Buttondark
                         text="submit"
                         />
-                    </form>
-                  </div>
-                
-                <div className="subscribe-error-container">
-                <span className="subscribe-error-message">{errors.email && errors.email}</span>
-                </div>
-                </div>
-              </div>
+                        
+                            </form>
+                  <span className="subscribe-error-message">{errors.email && errors.email}</span>
+                </div></div>
           </div>
       </div>
   </div>
