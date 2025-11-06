@@ -830,9 +830,7 @@ margin-top: 3rem;
 .accordion-ingress{
   margin-bottom: 0.5rem;
 }
-
 /*ACCORDIONTITLE END*/
-
 
 /*FORM*/
 .form-container {
@@ -866,6 +864,10 @@ margin-top: 3rem;
   color: var(--orange-primary-color);
   border: 1px solid var(--orange-primary-color);
 }
+input::placeholder, textarea::placeholder {
+    color: var(--orange-primary-color);
+}
+
 .form-button {
   align-self: flex-start;
 }
@@ -891,7 +893,6 @@ textarea {
   padding-bottom: 5px;
 }
 /*FORM END*/
-
 
 /*FORMPAGE*/
 .box-form-container {
@@ -938,13 +939,14 @@ color: var(--white-color);
 /*ERROR FORM*/
 .successful-message {
   display: flex; 
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 10px;
   gap: 2rem;
-  justify-content: center;
-  align-items: center;
- flex-direction: column;
+  padding: 3rem 3rem 3rem 3rem;
   background-color: var(--light-green-headline-color);
-  
 }
 .error-message {
   color: red;
@@ -997,7 +999,7 @@ color: var(--white-color);
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 1rem;
-  color: var(--orange-primary-color);
+  color: black;
   border: 1px solid var(--orange-primary-color);
 }
 .form-booking-button {
