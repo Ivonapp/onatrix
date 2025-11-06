@@ -880,7 +880,33 @@ textarea {
   resize: none;
   font-family: 'urbanist', sans-serif;
 }
+.red-dot {
+  color: red;
+  padding-left: 5px;
+}
+
+.red-dot-container {
+  display: flex;
+  padding-bottom: 5px;
+}
+.form-text-telephone {
+  padding-bottom: 5px;
+}
 /*FORM END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*FORMPAGE*/
 .box-form-container {
