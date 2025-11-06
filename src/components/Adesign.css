@@ -936,14 +936,15 @@ color: var(--white-color);
 /*BLOGACCORDION END*/
 
 /*ERROR FORM*/
-.Kund-respons {
+.successful-message {
   display: flex; 
   border-radius: 10px;
-  gap: 3rem;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
  flex-direction: column;
   background-color: var(--light-green-headline-color);
+  
 }
 .error-message {
   color: red;
@@ -960,15 +961,7 @@ color: var(--white-color);
   color: red; 
 }
 /*ERROR SUBSCRIBE*/
-.Kund-respons-email {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--logoipsum-color);
-  gap: 2rem;
-  padding-bottom: 1rem;
-}
+
 /*ERROR END*/
 
 
