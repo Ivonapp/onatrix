@@ -104,14 +104,14 @@ const Subscribe = () => {
                  Subscribe to our newsletter to receive early discount offers, updates and info
                 </div>
                 </div>
- <div className="subscribe-btn-placeholder-container">
+      <div className="subscribe-btn-placeholder-container">
       <form className="search-row" onSubmit={handleSubmit} noValidate>
            
                 <div className="input-wrapper">
                 <input
                 type="text"
                 name="email"
-                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
+                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*Denna raden är med chatgpt*/
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"/>
@@ -121,9 +121,9 @@ const Subscribe = () => {
                         />
                         
                             </form>
-                        </div>
+                        <span className="subscribe-error-message">{errors.email && errors.email}</span>
                     </div>
-                <span className="subscribe-error-message">{errors.email && errors.email}</span>
+                </div>
           </div>
       </div>
   </div>
