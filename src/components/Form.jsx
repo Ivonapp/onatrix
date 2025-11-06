@@ -12,7 +12,7 @@ const CustomerForm = () => {
                     })
                 const [errors, setErrors] = useState({})
                 const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
-
+                const [submitAttempted, setSubmitAttempted] = useState(false);
 
 
 
@@ -102,6 +102,7 @@ const CustomerForm = () => {
 
     const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
         e.preventDefault() 
+        setSubmitAttempted(true);
 
         if (validateForm()) {
             console.log('form valid')
@@ -133,6 +134,7 @@ const CustomerForm = () => {
                     email: '',
                     subject: '',
                     comment: '' })
+            setSubmitAttempted(false);
         }
     }
     
@@ -162,7 +164,7 @@ const CustomerForm = () => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="input"
+                                className={`input ${errors.name && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Name"/>
                                 <span className="error-message">{errors.name && errors.name}</span>
                                 </div>
@@ -177,7 +179,7 @@ const CustomerForm = () => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="input"
+                                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Email"/>
                                 <span className="error-message">{errors.email && errors.email}</span>
                                         </div>
@@ -189,7 +191,7 @@ const CustomerForm = () => {
                                 name="phoneNumber"
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
-                                className="input"
+                                className={`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Phone number"/>
                                 <span className="error-message">{errors.phoneNumber && errors.phoneNumber}</span>
                                         </div>
@@ -202,7 +204,7 @@ const CustomerForm = () => {
                                 name="subject"
                                 value={formData.subject}
                                 onChange={handleChange}
-                                className="input"
+                                className={`input ${errors.subject && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Subject"/>
                                 <span className="error-message">{errors.subject && errors.subject}</span>
                                         </div>
@@ -214,16 +216,16 @@ const CustomerForm = () => {
                                 name="comment"
                                 value={formData.comment}
                                 onChange={handleChange}
-                                className="input"
+                                className={`input ${errors.comment && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Describe your storage purpose so that we can match your request"></textarea>
                                         <span className="error-message">{errors.comment && errors.comment}</span>
                                         </div>
 
 
-                    <div className="form-button"> 
-                    <Buttondark
-                    text="Book Unit"
-                    />
+                            <div className="form-button"> 
+                            <Buttondark
+                            text="Book Unit"
+                            />
                 </div>
             </div>
         </div>
