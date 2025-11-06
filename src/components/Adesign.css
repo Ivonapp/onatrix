@@ -971,6 +971,7 @@ color: var(--white-color);
   color: red;
   padding-left: 1rem;
   font-size: 0.9rem;
+  border: 2px solid red;
 }
 
 /*ERROR END*/
