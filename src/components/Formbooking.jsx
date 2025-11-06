@@ -183,7 +183,7 @@ const StorageForm = () => {
                                 name="selectedUnit"
                                 value={formData.unit}
                                 onChange={handleChange}
-                                className={`input ${errors.unit && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
+                                className={`input ${errors.selectedUnit && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Choose Unit"/>
                                 <span className="error-message">{errors.selectedUnit && errors.selectedUnit}</span>
                                         </div>
