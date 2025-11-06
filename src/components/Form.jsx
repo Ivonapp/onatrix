@@ -68,9 +68,7 @@ const CustomerForm = () => {
             newErrors.email = "Must be a valid email. (e.g. email@domain.com)"
         }
 
-       if (!formData.phoneNumber.trim()) {
-            newErrors.phoneNumber = "Can't be left empty."
-        } else if (!/^\+?\d+$/.test(formData.phoneNumber)) {
+       if (formData.phoneNumber.trim() && !/^\+?\d+$/.test(formData.phoneNumber)) {
             newErrors.phoneNumber = "Must be a valid phone number."
         }
 
@@ -159,22 +157,23 @@ const CustomerForm = () => {
 
 
 <div className="form-name-container">
-                <div className="form-name">Your Name</div>
+    <div className="red-dot-container">
+                <div className="form-text-name">Your Name</div> <div className="red-dot">*</div></div>
                                <input
                                 type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 className={`input ${errors.name && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
-                                placeholder="Name"/>
+                                placeholder="Your name"/>
                                 <span className="error-message">{errors.name && errors.name}</span>
                                 </div>
                                         
                                         
-
                 <div className="form-email-phone">
                             <div className="form-text-alignment">
-                            <div className="form-text-email">Email</div>
+                            <div className="red-dot-container">
+                            <div className="form-text-email">Email</div> <div className="red-dot">*</div></div>
                                 <input
                                 type="text"
                                 name="email"
@@ -186,46 +185,48 @@ const CustomerForm = () => {
                                         </div>
 
                         <div className="form-text-alignment">
-                        <div className="form-text-name">Telephone</div>
+                        <div className="form-text-telephone">Telephone</div>
                                 <input
                                 type="text"
                                 name="phoneNumber"
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
                                 className={`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
-                                placeholder="Phone number"/>
+                                placeholder="Telephone"/>
                                 <span className="error-message">{errors.phoneNumber && errors.phoneNumber}</span>
                                         </div>
                                         </div>
 
                         <div className="form-unit">
-                            <div className="form-text-unit">Subject</div>
+                            <div className="red-dot-container">
+                            <div className="form-text-subject">Subject</div> <div className="red-dot">*</div></div>
                                 <input
                                 type="text"
                                 name="subject"
                                 value={formData.subject}
                                 onChange={handleChange}
                                 className={`input ${errors.subject && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
-                                placeholder="Subject"/>
+                                placeholder="How can we help you"/>
                                 <span className="error-message">{errors.subject && errors.subject}</span>
                                         </div>
                         
                         <div className="form-storage">
-                            <div className="form-text-storage">Comment</div>
+                            <div className="red-dot-container">
+                            <div className="form-text-comment">Comments / Questions</div> <div className="red-dot">*</div></div>
                                 <textarea
                                 type="text"
                                 name="comment"
                                 value={formData.comment}
                                 onChange={handleChange}
                                 className={`input ${errors.comment && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
-                                placeholder="Describe your storage purpose so that we can match your request"></textarea>
+                                placeholder="Comments"></textarea>
                                         <span className="error-message">{errors.comment && errors.comment}</span>
                                         </div>
 
 
                             <div className="form-button"> 
                             <Buttondark
-                            text="Book Unit"
+                            text="Submit"
                             />
                 </div>
             </div>
