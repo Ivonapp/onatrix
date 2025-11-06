@@ -121,7 +121,7 @@ const Subscribe = () => {
                         />
                         
                             </form>
-                  <span className="subscribe-error-message">{errors.email && errors.email}</span>
+                  <span className="error-message">{errors.email && errors.email}</span>
                 </div></div>
           </div>
       </div>
