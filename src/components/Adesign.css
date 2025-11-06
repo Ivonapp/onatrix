@@ -974,3 +974,26 @@ color: var(--white-color);
 }
 
 /*ERROR END*/
+
+
+
+
+.input.error {
+  border: 2px solid red;
+  color: red; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
