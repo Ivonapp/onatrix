@@ -8,7 +8,9 @@ const Subscribe = () => {
       })
       const [errors, setErrors] = useState({})
       const [submitted, setSubmitted] = useState(false) /*rutan som bekräftar att allt är bra efter att kund submittat*/
-      const [submitAttempted, setSubmitAttempted] = useState(false);
+      const [submitAttempted, setSubmitAttempted] = useState(false)
+      const [message, setMessage] = useState('')
+
 
         const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
         const { name, value } = e.target
@@ -65,10 +67,12 @@ const Subscribe = () => {
 
           })
 
-
+            const data = await res.json()
+            setMessage(data.message)
             console.log('Status:', res.status) 
             console.log('Response OK:', res.ok)
-
+            console.log('Error message', data)
+            
 
         /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
         if (res.ok) {
@@ -81,8 +85,8 @@ const Subscribe = () => {
     
     if (submitted) {
         return (
-            <div className="Kund-respons-email">
-                <p>You are now subscribing to our weekly newsletter.</p>
+            <div className="successful-message">
+                <p>{message}</p>
                 <Buttondark text="OK" onClick={handleOk} />
             </div>
         )
@@ -111,7 +115,7 @@ const Subscribe = () => {
                 <input
                 type="text"
                 name="email"
-                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*Denna raden är med chatgpt*/
+                className={`input ${errors.email && submitAttempted ? 'error' : ''}`} /*Denna raden är med chatgpt - {`input ${errors.email && submitAttempted ? 'error' : ''}`}*/
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"/>
