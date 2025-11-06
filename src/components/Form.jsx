@@ -12,8 +12,8 @@ const CustomerForm = () => {
                     })
                 const [errors, setErrors] = useState({})
                 const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
-                const [submitAttempted, setSubmitAttempted] = useState(false);
-
+                const [submitAttempted, setSubmitAttempted] = useState(false)
+                const [message, setMessage] = useState('')
 
 
         const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
@@ -119,7 +119,8 @@ const CustomerForm = () => {
         body: JSON.stringify(formData)
         })
 
-
+            setMessage(data.message)
+            console.log('Error message:', data)
             console.log('Status:', res.status) 
             console.log('Response OK:', res.ok)
 
@@ -139,9 +140,8 @@ const CustomerForm = () => {
     
     if (submitted) {
         return (
-            <div className="Kund-respons">
-                <h2>Tack för ditt meddelande!</h2>
-                <p>Vi kontaktar dig inom 72 timmar.</p>
+            <div className="successful-message">
+                <p>{message}</p>
                 <Buttondark text="OK" onClick={handleOk} />
             </div>
         )
