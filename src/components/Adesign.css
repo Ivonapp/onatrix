@@ -873,7 +873,6 @@ margin-top: 3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
-  
 }
 textarea {
   height: 150px;
@@ -884,7 +883,6 @@ textarea {
   color: red;
   padding-left: 5px;
 }
-
 .red-dot-container {
   display: flex;
   padding-bottom: 5px;
@@ -893,19 +891,6 @@ textarea {
   padding-bottom: 5px;
 }
 /*FORM END*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*FORMPAGE*/
@@ -998,6 +983,63 @@ color: var(--white-color);
 
 
 
+
+/*FORM-BOOKING*/
+.form-booking-container {
+  background-color: var(--logoipsum-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  height: 100%;
+  width: 650px;
+}
+.form-booking-email-phone {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.form-booking-email-phone .input {
+  flex: 1;
+}
+.form-booking-unit,
+.form-booking-storage {
+  width: 100%;
+}
+.input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: var(--orange-primary-color);
+  border: 1px solid var(--orange-primary-color);
+}
+.form-booking-button {
+  align-self: flex-start;
+}
+.form-booking-text-alignment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  height: 150px;
+  resize: none;
+  font-family: 'urbanist', sans-serif;
+}
+/*FORM END*/
+
+/*FORMPAGE*/
+.box-form-booking-container {
+display: flex;
+justify-content: space-between;
+gap: 1rem;
+width: 100%;
+margin-bottom: 4rem;
+}
+/*FORMPAGE END*/
 
 
 

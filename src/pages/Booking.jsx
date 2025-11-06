@@ -4,7 +4,7 @@ import Titlelayout from '../components/Titlelayout'
 import Chooseus from '../components/Chooseus'
 import Greentext from '../components/Greentext'
 import Faq from '../components/Faq'
-import Formpage from '../components/Formpage'
+import Formbookingpage from '../components/Formbookingpage'
 
 const Booking = () => {
   return (
@@ -18,7 +18,7 @@ const Booking = () => {
       middletitle="Book Your Storage Unit Now & Simplify Your Life!"
       ingress="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi non sodales augue. Phasellus eget elit gravida."
       />
-      <Formpage />
+      <Formbookingpage />
       <Chooseus />
       <Greentext 
       greentitle ="Looking for Secure and Flexible Storage? Find Your Perfect Fit With Us."
