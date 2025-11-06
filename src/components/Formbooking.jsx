@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import Buttondark from './Buttondark'
 
 
-const CustomerForm = () => {
+const StorageForm = () => {
                 const [formData, setFormData] = useState({
                     name: '',
                     email: '',    /*här skriver vi det som står i NAME under input*/ 
-                    unit: '',    /*här skriver vi det som står i NAME under input*/ 
-                    storage: '' /*här skriver vi det som står i NAME under input*/ 
+                    selectedUnit: '',    /*här skriver vi det som står i NAME under input*/ 
+                    purpose: '' /*här skriver vi det som står i NAME under input*/ 
                     })
                 const [errors, setErrors] = useState({})
                 const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
                 const [submitAttempted, setSubmitAttempted] = useState(false);
-
+                const [message, setMessage] = useState('');
 
 
         const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
@@ -35,11 +35,11 @@ const CustomerForm = () => {
                 error = "Email must contain '@' and a domain. (e.g. email@domain.com)"
             }
 
-            else if (name === 'unit' && !/^[A-Z][0-9]+$/.test(value)) {
-                error = "Unit must start with a capital letter followed by numbers. (e.g. 'A12')"
+            else if (name === 'selectedUnit' && !/^[A-Z][0-9]+$/.test(value)) {
+                error = "selectedUnit must start with a capital letter followed by numbers. (e.g. 'A12')"
             }
 
-            else if (name === 'storage' && !/^[A-Öa-ö0-9/s, ]+$/.test(value)) {
+            else if (name === 'purpose' && !/^[A-Öa-ö0-9\s, ]+$/.test(value)) {
                 error = "Please enter a valid storage description. Letters, numbers, and commas only."
             }
 
@@ -63,16 +63,16 @@ const CustomerForm = () => {
             newErrors.email = "Email must contain '@' and a domain. (e.g. email@domain.com)"
         }
 
-        if (!formData.unit.trim()) {
-            newErrors.unit = "Unit is required."
-        } else if (!/^[A-Z][0-9]+$/.test(formData.unit)) {
-            newErrors.unit = "Unit must start with a capital letter followed by numbers. (e.g. 'A12')"
+        if (!formData.selectedUnit.trim()) {
+            newErrors.selectedUnit = "Unit is required."
+        } else if (!/^[A-Z][0-9]+$/.test(formData.selectedUnit)) {
+            newErrors.selectedUnit = "Unit must start with a capital letter followed by numbers. (e.g. 'A12')"
         }
 
-        if (!formData.storage.trim()) {
-            newErrors.storage = "Storage description is required."
-        } else if (!/^[A-Öa-ö0-9/s, .-]+$/.test(formData.storage)) {    
-            newErrors.storage = "Please enter a valid storage description. Letters, numbers, and commas only."    
+        if (!formData.purpose.trim()) {
+            newErrors.purpose = "Storage description is required."
+        } else if (!/^[A-Öa-ö0-9\s, .-]+$/.test(formData.purpose)) {    
+            newErrors.purpose = "Please enter a valid storage description. Letters, numbers, and commas only."    
         }
 
         setErrors(newErrors)
@@ -98,7 +98,7 @@ const CustomerForm = () => {
 
 
         /*FETCH HÄR*/
-        const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/contact', {
+        const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/booking', {
         method: 'post',
         headers: {
         'Content-Type': 'application/json'
@@ -106,9 +106,13 @@ const CustomerForm = () => {
         body: JSON.stringify(formData)
         })
 
-
+            
             console.log('Status:', res.status) 
             console.log('Response OK:', res.ok)
+
+            const data = await res.json();             /*VISAR EXAKT FELMEDDELANDE OCH INE BARA 400*/
+            console.log('Current error:', data)   /*VISAR EXAKT FELMEDDELANDE OCH INE BARA 400*/
+            setMessage(data.message) /*MEDDELANDET SOM VISAS i successful-message */
 
 
         /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
@@ -117,17 +121,16 @@ const CustomerForm = () => {
             setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
                     name: '',
                     email: '',
-                    unit: '',
-                    storage: '' })
+                    selectedUnit: '',
+                    purpose: '' })
             setSubmitAttempted(false);
         }
     }
     
     if (submitted) {
         return (
-            <div className="Kund-respons">
-                <h2>Tack för ditt meddelande!</h2>
-                <p>Vi kontaktar dig inom 72 timmar.</p>
+            <div className="successful-message">
+                <p>{message}</p>
                 <Buttondark text="OK" onClick={handleOk} />
             </div>
         )
@@ -172,30 +175,30 @@ const CustomerForm = () => {
                                         </div>
                                         </div>
 
-                        <div className="form-booking-unit">
+                        <div className="formbooking-unit">
                             <div className="red-dot-container">
                             <div className="form-booking-unit">Choose Unit</div> <div className="red-dot">*</div></div>
                                 <input
                                 type="text"
-                                name="unit"
+                                name="selectedUnit"
                                 value={formData.unit}
                                 onChange={handleChange}
                                 className={`input ${errors.unit && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Choose Unit"/>
-                                <span className="error-message">{errors.unit && errors.unit}</span>
+                                <span className="error-message">{errors.selectedUnit && errors.selectedUnit}</span>
                                         </div>
                         
-                        <div className="form-booking-storage">
+                        <div className="formbooking-storage">
                             <div className="red-dot-container">
                             <div className="form-booking-storage">Storage purpose</div> <div className="red-dot">*</div></div>
                                 <textarea
                                 type="text"
-                                name="storage"
-                                value={formData.storage}
+                                name="purpose"
+                                value={formData.purpose}
                                 onChange={handleChange}
-                                className={`input ${errors.storage && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
+                                className={`input ${errors.purpose && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Describe your storage purpose so that we can match your request"></textarea>
-                                        <span className="error-message">{errors.storage && errors.storage}</span>
+                                        <span className="error-message">{errors.purpose && errors.purpose}</span>
                                         </div>
 
 
@@ -209,4 +212,4 @@ const CustomerForm = () => {
     </form>
   )
 }
-export default CustomerForm
+export default StorageForm
