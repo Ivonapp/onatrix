@@ -119,6 +119,7 @@ const CustomerForm = () => {
         body: JSON.stringify(formData)
         })
 
+            const data = await res.json()
             setMessage(data.message)
             console.log('Error message:', data)
             console.log('Status:', res.status) 
