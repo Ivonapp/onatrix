@@ -969,11 +969,6 @@ color: var(--white-color);
   gap: 2rem;
   padding-bottom: 1rem;
 }
-.subscribe-error-message {
-  color: red;
-  padding-left: 1rem;
-  font-size: 0.9rem;
-}
 /*ERROR END*/
 
 
