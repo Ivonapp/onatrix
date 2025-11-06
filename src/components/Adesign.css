@@ -943,20 +943,11 @@ color: var(--white-color);
 }
 /*ERROR FORM END*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*ERROR FORM & ERROR SUBSCRIBE BORDER*/
+.input.error {
+  border: 2px solid red;
+  color: red; 
+}
 /*ERROR SUBSCRIBE*/
 .Kund-respons-email {
   display: flex;
@@ -971,18 +962,13 @@ color: var(--white-color);
   color: red;
   padding-left: 1rem;
   font-size: 0.9rem;
-  border: 2px solid red;
 }
-
 /*ERROR END*/
 
 
 
 
-.input.error {
-  border: 2px solid red;
-  color: red; 
-}
+
 
 
 
