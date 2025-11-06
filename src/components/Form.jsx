@@ -104,8 +104,9 @@ const CustomerForm = () => {
         e.preventDefault() 
         setSubmitAttempted(true);
 
-        if (validateForm()) {
-            console.log('form valid')
+        if (!validateForm()) {              /*<OM formuläret är ogiltigt så stoppas det här*/
+            console.log('form invalid')
+            return                          /*Returnar om formuläret är ogiltift*/
         }
 
 
