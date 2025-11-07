@@ -229,6 +229,9 @@ color: var(--green-primary-color);
   margin-top: 50px;
   margin-bottom: 100px;
 }
+.gray-icon img {
+  cursor: default;
+}
 .box-container2 {
   display: flex;
   justify-content: center;
@@ -264,6 +267,7 @@ color: var(--green-primary-color);
   right: 50px;
   display: flex;
   padding: 1rem;
+   cursor: default;
 }
 /*BOX1 END*/
 
@@ -339,6 +343,7 @@ margin-left: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: default;
 }
 .column-margin {
   margin-bottom: 4rem;
