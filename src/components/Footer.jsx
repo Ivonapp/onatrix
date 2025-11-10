@@ -12,13 +12,20 @@ function Footer() {
     <div className="footer-holder"> 
     <p>&copy; 2025 StorAid, All rights reserved.</p>
     </div>
+
+    
     <div className="footer-icon">
+
+    <a href="/Errorpage">
     <img className="small-icon" src={Footericon} alt="small icon" />
-    <span>Terms & Conditions</span>
-   
+    <div>Terms & Conditions</div>
+    </a>
+    <a href="/Errorpage">
     <img className="small-icon" src={Footericon} alt="small icon" />
     <span>Privacy Policy</span>
+    </a>
     </div>
+
     </div>
     </div>
     </div>
