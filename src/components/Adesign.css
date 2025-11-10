@@ -663,6 +663,9 @@ padding-top: 5rem;
 /*BLOGS END*/
 
 /*BLOGCOLUMN*/
+.column-wrapper {
+    align-self: flex-start;
+}
 .item-blog-title {
   cursor: pointer;
 }
@@ -717,6 +720,10 @@ padding-top: 5rem;
 /*BLOGCOLUMN END*/
 
 /*TESTIMONIALS*/
+.testimonial-box:hover {
+ transform: scale(1.05);
+  cursor: pointer;
+}
 .testimonials-color {
   background-color: var(--green-hero-color);
 }
