@@ -18,11 +18,10 @@ const toggleblog = () => {
     <div className="column-yellow-ingress"> {isOpen ? (
             <>Read less <i className="bi bi-arrow-left"></i></>
           ) : (
-            <>read more <i className="bi bi-arrow-right"></i></>
+            <>Read more <i className="bi bi-arrow-right"></i></>
           )}
         </div>
-  
-        </div>
+      </div>
     </div>
   )
 }
