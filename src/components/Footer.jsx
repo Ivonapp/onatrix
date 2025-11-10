@@ -16,11 +16,11 @@ function Footer() {
     
     <div className="footer-icon">
 
-    <a href="/Errorpage">
+    <a href="/Errorpage" className="white-link">
     <img className="small-icon" src={Footericon} alt="small icon" />
-    <div>Terms & Conditions</div>
+    <span>Terms & Conditions</span>
     </a>
-    <a href="/Errorpage">
+    <a href="/Errorpage" className="white-link">
     <img className="small-icon" src={Footericon} alt="small icon" />
     <span>Privacy Policy</span>
     </a>
