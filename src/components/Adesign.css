@@ -46,9 +46,24 @@ align-items: center;
   color: var(--green-primary-color);
   text-decoration: none;
   font-weight: 800;
+    border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.nav-link:hover {
+  color: var(--white-color);
+  background-color: var(--green-primary-color);
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+.nav-link.active {
+  color: var(--white-color);
+  font-size: 1.1rem;
+  background-color: var(--green-primary-color);
 }
 .phone, .email {
   text-decoration: none;
+  
   color: var(--white-color);
 }
 /*HEADER END*/ 
@@ -659,7 +674,7 @@ padding-top: 5rem;
   justify-content: space-between;
   align-items: start; 
   flex-direction: column;
-  background-color: var(--green-hero-color);
+  background-color: var(--green-primary-color);
   width: 470px;
   height: 100%;
   padding: 1rem 1.5rem 2rem 1.5rem;
