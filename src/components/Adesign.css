@@ -694,6 +694,10 @@ padding-top: 5rem;
 .column-yellow-ingress {
   color: var(--orange-primary-color);
   padding-top: 1.5rem;
+  font-weight: 800;
+}
+.column-green-1:hover .column-yellow-ingress {
+    color: var(--green-hero-color);
 }
 .kalender-text {
   padding-left: 0.5rem;
