@@ -8,10 +8,7 @@ const toggleblog = () => {
   setIsOpen(!isOpen)
 }
   return (
-    
-
-
-    
+  
     <div className ="blog-accordion-item">
     <div className={`item-blog-title ${isOpen ? 'active': ''}`} onClick={toggleblog}>
     <div className="column-ingress">{isOpen ? item.description : item.description.substring(0, 100) + '...'}</div> {/*Kodraden från: item-blog-title fram till pil-ikonerna är med hjälp av CHATGPT.*/}
