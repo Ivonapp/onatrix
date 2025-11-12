@@ -2,7 +2,7 @@
       import { Link } from 'react-router-dom';
       import "./Adesign.css";
       import Buttonlight from './Buttonlight';
-      import Gubbe from '../assets/images/Gubbe.svg';
+      import Gubbe from '../assets/images/Gubbe.png';
 
 
 
