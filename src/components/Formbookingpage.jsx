@@ -1,6 +1,6 @@
 import React from 'react'
 import Formbooking from './Formbooking'
-import Bookbox from '../assets/images/Bookbox.svg';
+import Bookbox from '../assets/images/Bookbox.jpg';
 
 
 function Formbookingpage() {
