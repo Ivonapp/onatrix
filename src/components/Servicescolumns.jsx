@@ -1,6 +1,6 @@
 import React from 'react'
 import Yellowborder from './Yellowborder';
-import graybox2 from '../assets/images/graybox2.svg';
+import graybox2 from '../assets/images/graybox2.jpg';
 import Titlelayout from './Titlelayout';
 
 
@@ -29,7 +29,7 @@ function Servicescolumns() {
             </div>
 
 
-    <img src={graybox2} alt="logo" className="graybox2" />
+    <img src={graybox2} alt="StorAid employee organizing boxes" className="graybox2" />
 
 
 <div className="column-container">
