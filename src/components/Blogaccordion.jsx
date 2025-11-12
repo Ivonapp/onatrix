@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
 
-const Blogaccordion = ({item}) => {
+const Blogaccordion = ({item, isOpen, toggleblog}) => {
 
-const [isOpen, setIsOpen] = useState(false)
-
-const toggleblog = () => {
-  setIsOpen(!isOpen)
-}
   return (
   
     <div className ="blog-accordion-item">
