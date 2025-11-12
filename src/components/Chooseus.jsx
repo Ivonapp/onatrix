@@ -54,7 +54,7 @@ ingress="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molest
 
 
                 <div className="chooseus-box">
-                <img src={Chooseusbox} alt="logo" className="Chooseusbox" />
+                <img src={Chooseusbox} alt="Storeaid employees organizing a customers boxes" className="Chooseusbox" />
 
                     </div>
                 </div>

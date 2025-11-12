@@ -16,7 +16,7 @@ function Socialmediapage() {
 <div className="socialmedia-container">
             <div classname="socialmedia-column">
                 <div className="logogubbe"> 
-                    <img src={Gubbe2} alt="Logotyp" className="logo" /> 
+                    <img src={Gubbe2} alt="Image of a customer service representative" className="logo" /> 
                 </div></div>
 
 
