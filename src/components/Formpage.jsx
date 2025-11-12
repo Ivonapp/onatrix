@@ -12,7 +12,7 @@ function Formpage() {
 
 
 <div className="box-form-container"> 
-<img src={Bookbox} alt="graybox" className="logo" />
+<img src={Bookbox} alt="StorAid employee helping a customer with their storage unit" className="logo" />
             
                 <Form />
             </div>

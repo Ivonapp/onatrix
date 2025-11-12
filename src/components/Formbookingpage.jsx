@@ -12,7 +12,7 @@ function Formbookingpage() {
 
 
 <div className="box-form-booking-container"> 
-<img src={Bookbox} alt="graybox" className="logo" />
+<img src={Bookbox} alt="StorAid employee helping a customer with their storage unit" className="logo" />
             
                 <Formbooking />
             </div>
