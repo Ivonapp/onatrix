@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from './Form'
-import Bookbox from '../assets/images/Bookbox.svg';
+import Bookbox from '../assets/images/Bookbox.jpg';
 
 
 function Formpage() {
