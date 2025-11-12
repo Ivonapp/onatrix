@@ -22,10 +22,11 @@ const Faq = () => {
     <div>
 
         <div className="container"> 
+             <h4 className="accordion-yellow-faq-title">FAQs</h4>
             <div className="faq-wrapper">
         <div className="accordion-title-left">
+
        <Accordiontitle
-       title="FAQs"
        middletitle="Frequently Ask Questions"
        ingress="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo." />
         </div>
