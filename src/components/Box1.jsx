@@ -1,6 +1,6 @@
 import React from 'react'
 import Box2 from '../components/Box2'
-import Positionering1 from '../assets/images/Positionering1.svg';
+import Positionering1 from '../assets/images/Positionering1.jpg';
 import Positionering2 from '../assets/images/Positionering2.svg';
 
 function Box1() {
@@ -13,8 +13,8 @@ function Box1() {
 
 <div className="box-1">
 <div className="box-positioning">
-           <a href="" className="gray-icon"><img src={ Positionering1 } alt="iphone ikon"/></a>
-           <a href="" className="green-icon"><img src={ Positionering2 } alt="iphone ikon"/>
+           <a href="" className="gray-icon"><img src={ Positionering1 } alt="Two Storeaid employees organizing storage boxes"/></a>
+           <a href="" className="green-icon"><img src={ Positionering2 } alt="Icon representing years of experience, satisfied clients, and number of warehouses"/>
            
            <div className="number-text-container"> 
 
