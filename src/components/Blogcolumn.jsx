@@ -4,6 +4,7 @@ import Blogaccordion from './Blogaccordion'
 
 const Blogcolumn = () => {
     const [serviceItems, setServiceItems] = useState([])
+    const [openId, setOpenId] = useState(null)
 
     const fetchData = async () => {
         const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/blogs')
@@ -33,7 +34,15 @@ const Blogcolumn = () => {
             </div>
 
 <div className="blog-accordion-wrapper-open">
-              <Blogaccordion item={item} />
+         
+                    <Blogaccordion 
+                    item = {item} 
+                    isOpen = {openId === item.id}
+                    toggleblog = {() => setOpenId(openId === item.id ? null : item.id)}
+                    />
+
+
+
                   </div>
                 </div>
             </div>
