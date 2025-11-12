@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Testimonialstitle from './Testimonialstitle'
 import Testimonialsstar from './Testimonialsstar'
 import Teckenicon from '../assets/images/Teckenicon.svg'
+import Testimonialsbg from '../assets/images/Testimonialsbg.svg'
 
 
 
@@ -21,7 +22,7 @@ const Testimonials = () => {
 
   return (
 
-<div className="testimonials-color">
+<div className="testimonials-bg">
           <div className="container">
             < Testimonialstitle
             title="Testimonials"
