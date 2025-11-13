@@ -29,7 +29,7 @@
         </div>
       
         <div className="hero-icon">
-        <img src={Gubbe} alt="Logotyp" className="logo" /> 
+        <img src={Gubbe} alt="Decorative image of customer talking on the phone while holding a box" className="logo" /> 
         </div>
         </div>
         </div>
