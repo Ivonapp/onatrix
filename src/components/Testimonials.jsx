@@ -52,13 +52,14 @@ const Testimonials = () => {
                 <img
                   className="testimonials-icon"
                   src={item.avatarUrl}
+                  alt={`Customer profile picture of ${item.name}`}
                 />
                 <div className="text-sections">
                   <h5 className="testimonials-title">{item.name}</h5>
                   <p className="customeringress">{item.companyName}</p>
                 </div>
                                 <div className="testimonials-icon-yellow"> 
-                                    <img src={Teckenicon} alt="Logotyp" className="logo" /> 
+                                    <img src={Teckenicon} alt="Quotation mark icon" className="logo" /> 
                                 </div>
               </div>
             </div>
