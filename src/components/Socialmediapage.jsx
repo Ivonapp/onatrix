@@ -8,13 +8,11 @@ import Gubbe2 from '../assets/images/Gubbe2.png';
 
 function Socialmediapage() {
   return (
-    <div>
-        
-<div className="socialmedia-backgroundcolor">        
-                    <div className="container">
+<div className="socialmedia-backgroundcolor">
 
+<div className="container"> 
 <div className="socialmedia-container">
-            <div classname="socialmedia-column">
+            <div className="socialmedia-column">
                 <div className="logogubbe"> 
                     <img src={Gubbe2} alt="Image of a customer service representative" className="logo" /> 
                 </div></div>
@@ -61,8 +59,7 @@ function Socialmediapage() {
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
   )
 }
 

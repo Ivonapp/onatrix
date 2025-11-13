@@ -570,7 +570,7 @@ color: var(--green-primary-color);
 
 /*GREENTEXT*/
 .green-color-container {
-  background-color: var(--green-hero-color);    
+  background-color: var(--green-hero-color);   
 }
 .green-container { 
 display: flex;
@@ -631,7 +631,7 @@ padding-left: 30%;
   justify-content: space-between;
 }
 .socialmedia-border-column {
-  background-color: #9EB3A3;
+  background-color: var(--socialmedia-background-color);
   padding-left: 4rem;
   padding-right: 2rem;
   padding-top: 110px;
@@ -673,7 +673,7 @@ padding-left: 30%;
 .socialmedia-line {
   height: 2px;
   width: 20%;
-  background-color: black;
+  background-color: var(--black-color);
 }
 
 /*BLOGS*/
