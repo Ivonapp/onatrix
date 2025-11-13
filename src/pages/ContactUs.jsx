@@ -21,12 +21,10 @@ const ContactUs = () => {
       middletitle="Get Personalized Assistance – Contact Us"
       />
       <div className="contact-us-ingress">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo</div>
-      </div>
+      </div></div>
       <Formpage />
       <Socialmediapage />
       <Faq />
-
-    </div>
     </div>
   )
 }
