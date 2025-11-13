@@ -1,12 +1,7 @@
-import React, { useState } from 'react'
 
-const AccordionItem = ({item}) => {
+import React from 'react'
+const AccordionItem = ({item, isOpen, toggleAccordion}) => {
 
-const [isOpen, setIsOpen] = useState(false)
-
-const toggleAccordion = () => {
-  setIsOpen(!isOpen)
-}
   return (
     
     <div className ="accordion-item">
@@ -14,19 +9,15 @@ const toggleAccordion = () => {
     <div className="accordion-title">{item.title}</div>
     <div className="btn btn-accordion">
       <i className={`item-content ${isOpen ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i>
-
     </div>
     </div>
     {
-      isOpen && ( 
+      isOpen && 
       <p className="item-content">
         {item.description}
       </p>
-          )
         }
     </div>
-
   )
 }
-
 export default AccordionItem

@@ -18,7 +18,9 @@
      --logoipsum-color: #faf8ec;
      /*PRICING-COLUMNS*/
       --border-pricing-column: #ECECEC;
-      --hover-pricing-background: #F1FFEA; 
+      --hover-pricing-background: #F1FFEA;
+      /*SOCIALMEDIA*/
+      --socialmedia-background-color: #9EB3A3;
   }
 
 body {

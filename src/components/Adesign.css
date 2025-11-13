@@ -46,12 +46,34 @@ align-items: center;
   color: var(--green-primary-color);
   text-decoration: none;
   font-weight: 800;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.nav-link:hover {
+  color: var(--white-color);
+  background-color: var(--green-primary-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.nav-link.active {
+  color: var(--white-color);
+  font-size: 1.1rem;
+  background-color: var(--green-primary-color);
 }
 .phone, .email {
   text-decoration: none;
   color: var(--white-color);
 }
 /*HEADER END*/ 
+
+/*SOCIAL MEDIA*/
+.right-icons a:focus {
+  outline: 4px solid var(--orange-primary-color);
+  border-radius: 4px;
+  padding-top: 2px;
+}
+
 
 /*BUTTON LIGHT*/ 
 .buttonlight {
@@ -87,6 +109,9 @@ cursor: pointer;
 /*BUTTON DARK END*/
 
 /*HERO*/ 
+.hero-icon {
+  line-height: 0;
+}
 .hero-background {
   background-color: var(--green-hero-color);
 }
@@ -148,11 +173,12 @@ background-color: var(--green-primary-color);
     padding: 1rem;
   justify-content: center;
 }
-
-
-
-
-
+.white-link {
+color: var(--white-color);
+text-decoration: none;
+display: flex;
+align-items: center;
+}
 /*SUBSCRIBE*/
 .subscribe-color {
 background-color: var(--primary-subscribe-color);
@@ -263,11 +289,12 @@ color: var(--green-primary-color);
 }
 .number-text-container {
   position: absolute;
-  bottom: 20px;
-  right: 50px;
+  bottom: -30px;
+  right: 65px;
   display: flex;
   padding: 1rem;
-   cursor: default;
+  cursor: default;
+  gap: 1rem; 
 }
 /*BOX1 END*/
 
@@ -276,7 +303,8 @@ color: var(--green-primary-color);
 display: flex;
 }
 .positionering-text {
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .yellow-title {
 color: var(--orange-primary-color);
@@ -352,22 +380,23 @@ margin-left: 2rem;
 
 /*YELLOWBORDER*/
 .yellow-border-title {
-  font-size: 16px;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
   font-weight: 800;
 }
 
 .yellow-border-ingress {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .yellow-border {
-border: 2px solid var(--gray-border-color);
+border: 4px solid var(--gray-border-color);
 border-radius: 10px;
-padding: 1.7rem;
-margin: 0.5rem;
+padding: 3rem;
+margin: 0.4rem;
 max-width: 400px;
 }
 .yellow-border:hover {
-border: 2px solid var(--orange-primary-color);
+border: 4px solid var(--orange-primary-color);
 }
 /*YELLOWBORDER END*/
 
@@ -375,6 +404,7 @@ border: 2px solid var(--orange-primary-color);
 .choose-us-column {
   display: flex;
   align-items: center;
+
 }
 .choose-us-text-section {
   margin-left: 1.5rem;
@@ -392,7 +422,9 @@ border: 2px solid var(--orange-primary-color);
 .chooseus-yellow-title {
 color: var(--orange-primary-color);
 padding: 1rem;
-margin-top: 3rem;
+background-color: var(--green-hero-color);
+border-radius: 10px;
+margin-top: 2rem;
 }
 .chooseus-title-container {
 display: flex;
@@ -401,11 +433,14 @@ justify-content: space-between;
 margin-left: 1rem;
 }
 .chooseus-green-title {
-  width: 600px;
+  width: 640px;
 }
-.chooseus-ingress {
+.chooseus-ingress, .contact-us-ingress {
   margin-left: 2rem;
   width: 650px;
+}
+.contact-us-ingress {
+  padding-bottom: 1rem;
 }
 /*TITLELAYOUT END*/
 
@@ -535,14 +570,13 @@ color: var(--green-primary-color);
 
 /*GREENTEXT*/
 .green-color-container {
-  background-color: var(--green-hero-color);    
+  background-color: var(--green-hero-color);   
 }
 .green-container { 
 display: flex;
 flex-direction: column;
 text-align: center;
 padding: 4rem;
-margin-bottom: 1rem;
 }
 .greentitle, .greeningresse {
 color: var(--white-color);
@@ -561,7 +595,6 @@ padding-top: 1rem;
   text-align: center;
   justify-content: center;
   height: 700px;
-  margin-bottom: 1rem;
   }
 
 .page-not-found-background {
@@ -591,16 +624,17 @@ padding-top: 1rem;
 }
 .logogubbe {
 display: flex;
-padding-top: 5rem;
+padding-left: 30%;
 }
 .socialmedia-container {
   display: flex;
   justify-content: space-between;
 }
 .socialmedia-border-column {
-  background-color: #9EB3A3;
+  background-color: var(--socialmedia-background-color);
   padding-left: 4rem;
   padding-right: 2rem;
+  padding-top: 110px;
   width: 650px;
 }
 .socialmedia-border {
@@ -639,7 +673,7 @@ padding-top: 5rem;
 .socialmedia-line {
   height: 2px;
   width: 20%;
-  background-color: black;
+  background-color: var(--black-color);
 }
 
 /*BLOGS*/
@@ -650,6 +684,9 @@ padding-top: 5rem;
 /*BLOGS END*/
 
 /*BLOGCOLUMN*/
+.column-wrapper {
+    align-self: flex-start;
+}
 .item-blog-title {
   cursor: pointer;
 }
@@ -661,7 +698,7 @@ padding-top: 5rem;
   justify-content: space-between;
   align-items: start; 
   flex-direction: column;
-  background-color: var(--green-hero-color);
+  background-color: var(--green-primary-color);
   width: 470px;
   height: 100%;
   padding: 1rem 1.5rem 2rem 1.5rem;
@@ -678,6 +715,10 @@ padding-top: 5rem;
 .column-yellow-ingress {
   color: var(--orange-primary-color);
   padding-top: 1.5rem;
+  font-weight: 800;
+}
+.column-green-1:hover .column-yellow-ingress {
+    color: var(--green-hero-color);
 }
 .kalender-text {
   padding-left: 0.5rem;
@@ -704,12 +745,16 @@ padding-top: 5rem;
 /*BLOGCOLUMN END*/
 
 /*TESTIMONIALS*/
-.testimonials-color {
-  background-color: var(--green-hero-color);
+.testimonial-box:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
-.testimonials {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.testimonials-bg {
+  background-image: 
+  linear-gradient(rgba(18, 55, 42, 0.7)),
+  url('../assets/images/Testimonialsbg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .testimonials-icon {
   border-radius: 50%;
@@ -718,14 +763,14 @@ padding-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-top: 20px;
   gap: 1rem;
 }
 .testimonials-title {
   display: flex; 
   text-align: left;
-  font-size: 40px;
+  font-size: 1rem;
   font-weight: 800;
 }
 .testimonial-box {
@@ -737,13 +782,9 @@ padding-top: 5rem;
   flex-direction: column;
   align-items: flex-start;
 }
-.testimonials-title {
-  font-size: 16px;
-  font-weight: 800;
-}
 .testimonials-comment {
   margin-top: 50px; 
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 500;
   text-align: left;
   width: 100%;
@@ -779,14 +820,14 @@ padding-top: 5rem;
 /*ACCORDION och FAQ*/
 .faq-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  padding-top: 1.5rem;
 }
 .accordion-wrapper {
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   align-items: flex-end;
   margin-bottom: 5rem;
-  margin-top: 5rem;
 }
 .accordion-item {
   width: 800px;
@@ -796,7 +837,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 background: #ececec;
-padding: 1rem;
+padding: 1.2rem;
 border-radius: 5px;
 margin: 0.2rem;
 cursor: pointer;
@@ -814,20 +855,16 @@ color: black;
 .item-content {
 padding: 1rem;
 }
-.accordion-left {
-  display: flex;
-  text-align: left;
-}
 /*ACCORDION END*/
 
 /*ACCORDIONTITLE*/
-.accordion-left {
-display: flex;
-flex-direction: column;
-}
-.accordion-yellow-title {
+.accordion-yellow-faq-title, .yellow-title {
 color: var(--orange-primary-color);
 margin-top: 3rem;
+background-color: var(--green-hero-color);
+border-radius: 10px;
+padding: 1rem;
+align-items: start;
 }
 .accordion-green-title{
   margin-bottom: 0.5rem;
@@ -843,7 +880,7 @@ margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 3rem;
   border-radius: 5px;
   height: 100%;
   width: 650px;
@@ -872,7 +909,6 @@ margin-top: 3rem;
 input::placeholder, textarea::placeholder {
     color: var(--orange-primary-color);
 }
-
 .form-button {
   align-self: flex-start;
 }
@@ -914,6 +950,7 @@ margin-bottom: 4rem;
 display: flex;
 flex-direction: column;
 align-items: center;
+text-align: center;
 padding-top: 4rem;
 gap: 1rem;
 }
@@ -925,6 +962,8 @@ color: var(--white-color);
 }
 .testimonials-small-ingress {
 color: var(--white-color);
+font-size: 1.1rem;
+width: 1000px;
 }
 /*TESTIMONIALS END*/
 
@@ -984,8 +1023,10 @@ color: var(--white-color);
   background-color: var(--logoipsum-color);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 2rem;
+  padding: 2rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
   border-radius: 5px;
   height: 100%;
   width: 650px;

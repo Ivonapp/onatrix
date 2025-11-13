@@ -4,7 +4,7 @@ import Icon2 from '../assets/images/Icon2.svg';
 import Icon3 from '../assets/images/Icon3.svg';
 import Icon4 from '../assets/images/Icon4.svg';
 import ChooseusColumn from './ChooseusColumn';
-import Chooseusbox from '../assets/images/Chooseusbox.svg';
+import Chooseusbox from '../assets/images/Chooseusbox.jpg';
 import Titlelayout from './Titlelayout';
 
 function Chooseus() {
@@ -54,7 +54,7 @@ ingress="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molest
 
 
                 <div className="chooseus-box">
-                <img src={Chooseusbox} alt="logo" className="Chooseusbox" />
+                <img src={Chooseusbox} alt="Storeaid employees organizing a customers boxes" className="Chooseusbox" />
 
                     </div>
                 </div>

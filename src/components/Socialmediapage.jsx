@@ -4,19 +4,17 @@ import Socialmedia from './Socialmedia';
 import Phoneicon from '../assets/images/Phoneicon.svg';
 import Brev2 from '../assets/images/Brev2.svg';
 import Location from '../assets/images/Location.svg';
-import Gubbe2 from '../assets/images/Gubbe2.svg';
+import Gubbe2 from '../assets/images/Gubbe2.png';
 
 function Socialmediapage() {
   return (
-    <div>
-        
-<div className="socialmedia-backgroundcolor">        
-                    <div className="container">
+<div className="socialmedia-backgroundcolor">
 
+<div className="container"> 
 <div className="socialmedia-container">
-            <div classname="socialmedia-column">
+            <div className="socialmedia-column">
                 <div className="logogubbe"> 
-                    <img src={Gubbe2} alt="Logotyp" className="logo" /> 
+                    <img src={Gubbe2} alt="Image of a customer service representative" className="logo" /> 
                 </div></div>
 
 
@@ -61,8 +59,7 @@ function Socialmediapage() {
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
   )
 }
 

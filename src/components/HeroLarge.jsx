@@ -2,7 +2,7 @@
       import { Link } from 'react-router-dom';
       import "./Adesign.css";
       import Buttonlight from './Buttonlight';
-      import Gubbe from '../assets/images/Gubbe.svg';
+      import Gubbe from '../assets/images/Gubbe.png';
 
 
 
@@ -15,6 +15,7 @@
         <div className="container">
         <div className="hero-wrapper">
         <div className="text-container">
+        <h4 className="yellow-title">Welcome to StorAid</h4>
         <h1 className="h1-headline">Space Simplified,</h1>
         <h1 className="h1-headline">Storage Perfected</h1>
         <div className="hero-ingress">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a sem magna. Etiam ac odio sit amet lorem fringilla sodales. Cras lobortis, libero at iaculis luctus, nisi ex pellentesque nisi, at euismod sem ipsum ac dolor.</div>

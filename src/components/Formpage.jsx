@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from './Form'
-import Bookbox from '../assets/images/Bookbox.svg';
+import Bookbox from '../assets/images/Bookbox.jpg';
 
 
 function Formpage() {
@@ -12,7 +12,7 @@ function Formpage() {
 
 
 <div className="box-form-container"> 
-<img src={Bookbox} alt="graybox" className="logo" />
+<img src={Bookbox} alt="StorAid employee helping a customer with their storage unit" className="logo" />
             
                 <Form />
             </div>
