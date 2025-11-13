@@ -9,13 +9,17 @@ function Socialmedia() {
     <div>
         
  <div className="right-icons">
-      <a href="https://www.facebook.com"> <img src={Facebook} alt="Facebook" className="icon" />
+      <a href="https://www.facebook.com" aria-label="Visit StorAid on Facebook">
+      <img src={Facebook} alt="" className="icon" aria-hidden="true" />
       </a>
-      <a href="https://www.twitter.com"> <img src={Twitter} alt="Twitter" className="icon" />
+      <a href="https://www.twitter.com" aria-label="Visit StorAid on Twitter"> 
+      <img src={Twitter} alt="" className="icon" aria-hidden="true" />
       </a>
-      <a href="https://www.instagram.com"> <img src={Instagram} alt="Instagram" className="icon" />
+      <a href="https://www.instagram.com" aria-label="Visit StorAid on Instagram">
+      <img src={Instagram} alt="" className="icon" aria-hidden="true" />
       </a>
-      <a href="https://www.youtube.com"> <img src={Youtube} alt="Youtube" className="icon" />
+      <a href="https://www.youtube.com" aria-label="Visit StorAid on Youtube">
+       <img src={Youtube} alt="" className="icon" aria-hidden="true" />
       </a>
       </div>
     </div>
