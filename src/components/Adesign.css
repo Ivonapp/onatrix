@@ -67,6 +67,14 @@ align-items: center;
 }
 /*HEADER END*/ 
 
+/*SOCIAL MEDIA*/
+.right-icons a:focus {
+  outline: 4px solid var(--orange-primary-color);
+  border-radius: 4px;
+  padding-top: 2px;
+}
+
+
 /*BUTTON LIGHT*/ 
 .buttonlight {
 background-color: var(--orange-primary-color);
