@@ -15,12 +15,16 @@ export default function Header() {
 
       <div className="header-color">
       <div className="left-icons">
-      <img src={Telefon} alt="Telefonnummer" className="logo" />
-      <a href="tel:+46812312244" className="phone">+46 8 123 122 44</a>
+      <img src={Telefon} alt="" aria-hidden="true" className="logo" />
+      <a href="tel:+46812312244" className="phone" aria-label="Call us at plus forty-six eight one two three one two two four four">
+      +46 8 123 122 44
+      </a>
 
       <div className="contact-info">
-      <img src={Brev} alt="Email" className="logo" />
-      <a href="mailto:contact@domain.com" className="email"> contact@domain.com</a>
+      <img src={Brev} alt="" aria-hidden="true" className="logo" />
+      <a href="mailto:contact@domain.com" className="email" aria-label="Send an email to contact at domain dot com">
+      contact@domain.com
+      </a>
       </div>
       </div>
 
@@ -30,9 +34,9 @@ export default function Header() {
       <div className="middle-section">
       <div className="bottom-icon">
 
-<Link to="/home">
-  <img src={Logostoragecompany} alt="Logotyp" className="logo" />
-</Link>
+        <Link to="/home" aria-label="Go to home page">
+          <img src={Logostoragecompany} alt="" aria-hidden="true" className="logo" />
+        </Link>
       </div>
 
     <nav className="navbar">
