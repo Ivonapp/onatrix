@@ -10,27 +10,27 @@ function Logoipsum() {
     <div>
 
        
-    <div className="logoipsum-background">
-      <div className="container">
-        <div className="logoipsum-flex">
-    <div className="Logoipsum1">
-    <img src={Logoipsum1} alt="logo" className="Logoipsum-icon" />
-    </div>
-    <div className="Logoipsum2">
-    <img src={Logoipsum2} alt="logo" className="Logoipsum-icon" />
-    </div>
-    <div className="Logoipsum3">
-    <img src={Logoipsum3} alt="logo" className="Logoipsum-icon" />
-    </div>
-    <div className="Logoipsum4">
-    <img src={Logoipsum4} alt="logo" className="Logoipsum-icon" />
-    </div>
-    <div className="Logoipsum5">
-    <img src={Logoipsum5} alt="logo" className="Logoipsum-icon" />
-    </div>
-    </div>
-    </div>
-  </div>
+          <div className="logoipsum-background">
+            <div className="container">
+              <div className="logoipsum-flex">
+                <div className="Logoipsum1">
+                <img src={Logoipsum1} alt="" className="Logoipsum-icon" />
+                  </div>
+                <div className="Logoipsum2">
+                <img src={Logoipsum2} alt="" className="Logoipsum-icon" />
+                  </div>
+                <div className="Logoipsum3">
+                <img src={Logoipsum3} alt="" className="Logoipsum-icon" />
+                  </div>
+                <div className="Logoipsum4">
+                <img src={Logoipsum4} alt="" className="Logoipsum-icon" />
+                  </div>
+                <div className="Logoipsum5">
+                <img src={Logoipsum5} alt="" className="Logoipsum-icon" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
