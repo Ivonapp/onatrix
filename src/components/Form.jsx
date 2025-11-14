@@ -5,18 +5,18 @@ import Buttondark from './Buttondark'
 const CustomerForm = () => {
                 const [formData, setFormData] = useState({
                     name: '',
-                    phoneNumber: '',      /*här skriver vi det som står i NAME under input*/ 
-                    email: '',    /*här skriver vi det som står i NAME under input*/ 
-                    subject: '',    /*här skriver vi det som står i NAME under input*/ 
-                    comment: '' /*här skriver vi det som står i NAME under input*/ 
+                    phoneNumber: '',
+                    email: '',
+                    subject: '',  
+                    comment: '' 
                     })
                 const [errors, setErrors] = useState({})
-                const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
+                const [submitted, setSubmitted] = useState(false) 
                 const [submitAttempted, setSubmitAttempted] = useState(false)
                 const [message, setMessage] = useState('')
 
 
-        const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
+        const handleChange = (e) => { 
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
 
@@ -24,7 +24,7 @@ const CustomerForm = () => {
         }
     
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER I REALTID*/
+        
         const automaticValidation = (name, value) => {
             let error = ''
 
@@ -32,7 +32,7 @@ const CustomerForm = () => {
                 error = "Your name can only contain letters."
             }
 
-            else if (name === 'email' && !/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(value)) {
+            else if (name === 'email' && !/^[^\s@]+@[^\s@,]+\.[^\s@,.]+$/.test(value)) {
                 error = "Must be a valid email. (e.g. email@domain.com)"
             }
 
@@ -52,7 +52,6 @@ const CustomerForm = () => {
         }
 
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER*/
         const validateForm = () => {
             const newErrors = {}
 
@@ -64,7 +63,7 @@ const CustomerForm = () => {
 
         if (!formData.email.trim()) {
             newErrors.email = "Can't be left empty."
-        } else if (!/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(formData.email)) {
+        } else if (!/^[^\s@]+@[^\s@,]+\.[^\s@,.]+$/.test(formData.email)) {
             newErrors.email = "Must be a valid email. (e.g. email@domain.com)"
         }
 
@@ -93,24 +92,24 @@ const CustomerForm = () => {
 
 
 
-    const handleOk = () => { /*NÄR KUNDEN TRYCKER PÅ OK-KNAPPEN SÅ FÖRSVINNER Kund-respons RUTAN*/
+    const handleOk = () => { 
         setSubmitted(false)
     }
 
 
-    const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
+    const handleSubmit = async (e) => {  
         e.preventDefault() 
         setSubmitAttempted(true);
 
-        if (!validateForm()) {              /*<OM formuläret är ogiltigt så stoppas det här*/
+        if (!validateForm()) { 
             console.log('form invalid')
-            return                          /*Returnar om formuläret är ogiltift*/
+            return                       
         }
 
 
 
 
-        /*FETCH HÄR*/
+
         const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/contact', {
         method: 'post',
         headers: {
@@ -126,10 +125,10 @@ const CustomerForm = () => {
             console.log('Response OK:', res.ok)
 
 
-        /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
+       
         if (res.ok) {
             setSubmitted(true)
-            setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
+            setFormData({  
                     name: '',
                     phoneNumber: '',
                     email: '',
