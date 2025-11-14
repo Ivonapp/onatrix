@@ -1,5 +1,6 @@
 import React from 'react'
 import Footericon from '../assets/images/Footericon.svg';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -16,14 +17,14 @@ function Footer() {
     
     <div className="footer-icon">
 
-    <a href="/Errorpage" className="white-link">
+     <Link to="/Errorpage" className="white-link">
     <img className="small-icon" src={Footericon} alt="small icon" />
     <span>Terms & Conditions</span>
-    </a>
-    <a href="/Errorpage" className="white-link">
+    </Link>
+     <Link to="/Errorpage" className="white-link">
     <img className="small-icon" src={Footericon} alt="small icon" />
     <span>Privacy Policy</span>
-    </a>
+    </Link>
     </div>
 
     </div>
