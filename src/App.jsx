@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Navigate, BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -13,7 +13,7 @@ import Subscribe from './components/Subscribe';
 
 function App() {
   return (
-    <BrowserRouter>
+     <BrowserRouter basename="/onatrix/">
     <Header />
     <Routes>
     <Route path="/" element={<Home />} />
@@ -23,6 +23,7 @@ function App() {
     <Route path="/ContactUs" element={<ContactUs />} /> 
     <Route path="/Booking" element={<Booking />} />
     <Route path="/Errorpage" element={<Errorpage />} />
+    <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
      <Subscribe />
      <Footer />
