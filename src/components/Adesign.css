@@ -222,7 +222,7 @@ color: var(--green-primary-color);
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 30px;  /*MELLANRUMMET MELLAN KNAPPEN OCH RUBRIKEN*/
+  gap: 30px;  
 }
 
 .search-row {
