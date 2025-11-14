@@ -142,6 +142,7 @@ const CustomerForm = () => {
     if (submitted) {
         return (
             <div className="successful-message">
+                <i className="bi bi-envelope-check-fill"></i>
                 <p>{message}</p>
                 <Buttondark text="OK" onClick={handleOk} />
             </div>
