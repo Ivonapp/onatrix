@@ -987,6 +987,12 @@ width: 1000px;
 /*BLOGACCORDION END*/
 
 /*ERROR FORM*/
+.successful-message-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
 .successful-message {
   display: flex; 
   justify-content: center;
@@ -998,11 +1004,10 @@ width: 1000px;
   padding: 3rem 3rem 3rem 3rem;
   background-color: var(--light-green-headline-color);
   font-size: 2rem;
-  border: 7px solid var(--green-hero-color);
+  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.476);
 }
 .bi.bi-envelope-check-fill {
   font-size: 3rem;
-  
 }
 .error-message {
   color: red;
