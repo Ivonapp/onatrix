@@ -5,17 +5,17 @@ import Buttondark from './Buttondark'
 const StorageForm = () => {
                 const [formData, setFormData] = useState({
                     name: '',
-                    email: '',    /*här skriver vi det som står i NAME under input*/ 
-                    selectedUnit: '',    /*här skriver vi det som står i NAME under input*/ 
-                    purpose: '' /*här skriver vi det som står i NAME under input*/ 
+                    email: '',
+                    selectedUnit: '',
+                    purpose: ''
                     })
                 const [errors, setErrors] = useState({})
-                const [submitted, setSubmitted] = useState(false) /*OM formuläret är OK så kommer if (res.ok) { bli TRUE*/
+                const [submitted, setSubmitted] = useState(false)
                 const [submitAttempted, setSubmitAttempted] = useState(false);
                 const [message, setMessage] = useState('');
 
 
-        const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
+        const handleChange = (e) => { 
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
 
@@ -23,7 +23,7 @@ const StorageForm = () => {
         }
     
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER I REALTID*/
+        
         const automaticValidation = (name, value) => {
             let error = ''
 
@@ -47,7 +47,7 @@ const StorageForm = () => {
         }
 
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER*/
+       
         const validateForm = () => {
             const newErrors = {}
 
@@ -80,24 +80,24 @@ const StorageForm = () => {
         }
 
 
-    const handleOk = () => { /*NÄR KUNDEN TRYCKER PÅ OK-KNAPPEN SÅ FÖRSVINNER Kund-respons RUTAN*/
+    const handleOk = () => { 
         setSubmitted(false)
     }
 
 
-    const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
+    const handleSubmit = async (e) => {
         e.preventDefault() 
         setSubmitAttempted(true);
 
-        if (!validateForm()) {              /*<OM formuläret är ogiltigt så stoppas det här*/
+        if (!validateForm()) { 
             console.log('form invalid')
-            return                          /*Returnar om formuläret är ogiltift*/
+            return
         }
 
 
 
 
-        /*FETCH HÄR*/
+ 
         const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/booking', {
         method: 'post',
         headers: {
@@ -110,15 +110,15 @@ const StorageForm = () => {
             console.log('Status:', res.status) 
             console.log('Response OK:', res.ok)
 
-            const data = await res.json();             /*VISAR EXAKT FELMEDDELANDE OCH INE BARA 400*/
-            console.log('Current error:', data)   /*VISAR EXAKT FELMEDDELANDE OCH INE BARA 400*/
-            setMessage(data.message) /*MEDDELANDET SOM VISAS i successful-message */
+            const data = await res.json();
+            console.log('Current error:', data) 
+            setMessage(data.message) 
 
 
-        /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
+  
         if (res.ok) {
             setSubmitted(true)
-            setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
+            setFormData({ 
                     name: '',
                     email: '',
                     selectedUnit: '',
