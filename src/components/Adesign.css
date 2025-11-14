@@ -401,20 +401,25 @@ border: 4px solid var(--orange-primary-color);
 /*YELLOWBORDER END*/
 
 /*CHOOSE-US-COLUMNS*/
+.chooseus-box img {
+  padding-top: 2rem;
+}
 .choose-us-column {
   display: flex;
   align-items: center;
-
 }
 .choose-us-text-section {
   margin-left: 1.5rem;
   width: 500px;
 }
 .choose-us-title {
-  margin-bottom: 0.5rem;
+  font-weight: 800;
+  margin-top: 1.5rem;
+   margin-bottom: 1rem;
 }
 .choose-us-ingress {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 18px;
 }
 /*CHOOSE-US-COLUMNS END*/
 
@@ -992,6 +997,7 @@ width: 1000px;
   gap: 2rem;
   padding: 3rem 3rem 3rem 3rem;
   background-color: var(--light-green-headline-color);
+  font-size: 2rem;
 }
 .error-message {
   color: red;
@@ -1010,13 +1016,6 @@ width: 1000px;
 /*ERROR SUBSCRIBE*/
 
 /*ERROR END*/
-
-
-
-
-
-
-
 
 
 /*FORM-BOOKING*/
