@@ -998,6 +998,11 @@ width: 1000px;
   padding: 3rem 3rem 3rem 3rem;
   background-color: var(--light-green-headline-color);
   font-size: 2rem;
+  border: 7px solid var(--green-hero-color);
+}
+.bi.bi-envelope-check-fill {
+  font-size: 3rem;
+  
 }
 .error-message {
   color: red;
