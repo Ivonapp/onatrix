@@ -842,7 +842,7 @@ padding-left: 30%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background: #ececec;
+background: var(--gray-border-color);
 padding: 1.2rem;
 border-radius: 5px;
 margin: 0.2rem;
@@ -856,7 +856,7 @@ background-color: var(--orange-primary-color);
   font-weight: 800;
 }
 .btn-accordion {
-color: black;
+color: var(--black-color);
 }
 .item-content {
 padding: 1rem;
@@ -1055,7 +1055,7 @@ width: 1000px;
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 1rem;
-  color: black;
+  color: var(--black-color);
   border: 1px solid var(--orange-primary-color);
 }
 .form-booking-button {
