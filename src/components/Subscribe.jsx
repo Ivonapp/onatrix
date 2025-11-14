@@ -23,7 +23,7 @@ const Subscribe = () => {
         const automaticValidation = (name, value) => {
             let error = ''
 
-            if (name === 'email' && !/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(value)) {
+            if (name === 'email' && !/^[^\s@]+@[^\s@,]+\.[^\s@,.]+$/.test(value)) {
                 error = "Must be a valid email. (e.g. email@domain.com)"
             }
 
@@ -36,7 +36,7 @@ const Subscribe = () => {
 
         if (!formData.email.trim()) {
             newErrors.email = "Can't be left empty."
-        } else if (!/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(formData.email)) {
+        } else if (!/^[^\s@]+@[^\s@,]+\.[^\s@,.]+$/.test(formData.email)) {
             newErrors.email = "Must be a valid email. (e.g. email@domain.com)"
         }
 
