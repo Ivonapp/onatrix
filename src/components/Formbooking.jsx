@@ -31,7 +31,7 @@ const StorageForm = () => {
                 error = "Your name can only contain letters."
             }
 
-            else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            else if (name === 'email' && !/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(value)) {
                 error = "Email must contain '@' and a domain. (e.g. email@domain.com)"
             }
 
@@ -59,7 +59,7 @@ const StorageForm = () => {
 
         if (!formData.email.trim()) {
             newErrors.email = "Email is required."
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        } else if (!/^[^\s@]+@[^\s@,]+\.[^\s@]+$/.test(formData.email)) {
             newErrors.email = "Email must contain '@' and a domain. (e.g. email@domain.com)"
         }
 
