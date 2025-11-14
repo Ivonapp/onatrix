@@ -7,19 +7,19 @@ const Subscribe = () => {
       email: ''
       })
       const [errors, setErrors] = useState({})
-      const [submitted, setSubmitted] = useState(false) /*rutan som bekräftar att allt är bra efter att kund submittat*/
+      const [submitted, setSubmitted] = useState(false) 
       const [submitAttempted, setSubmitAttempted] = useState(false)
       const [message, setMessage] = useState('')
 
 
-        const handleChange = (e) => {    /*DENNA GÖR SÅ VI KAN SKRIVA PÅ HEMSIDNA*/
+        const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
 
         automaticValidation(name, value)
         }
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER I REALTID*/
+      
         const automaticValidation = (name, value) => {
             let error = ''
 
@@ -30,7 +30,7 @@ const Subscribe = () => {
             setErrors(prevErrors => ({...prevErrors, [name]: error}))
         }
 
-        /*(regular expression) HANTERAR DET KUNDEN SKRIVER*/
+    
         const validateForm = () => {
             const newErrors = {}
 
@@ -44,21 +44,21 @@ const Subscribe = () => {
         return Object.keys(newErrors).length === 0;
         }
 
-        const handleOk = () => { /*NÄR KUNDEN TRYCKER PÅ OK-KNAPPEN SÅ FÖRSVINNER Kund-respons RUTAN*/
+        const handleOk = () => { 
         setSubmitted(false)
         }
 
-        const handleSubmit = async (e) => {  /*Så sidan inte laddar om*/
+        const handleSubmit = async (e) => { 
         e.preventDefault() 
         setSubmitAttempted(true);
 
 
-        if (!validateForm()) {              /*<OM formuläret är ogiltigt så stoppas det här*/
+        if (!validateForm()) { 
             console.log('form invalid')
-            return                          /*Returnar om formuläret är ogiltift*/
+            return                        
         }
 
-/*FETCH HÄR*/
+
           const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/subscribe', {
             method: 'post',
             headers: {
@@ -75,10 +75,10 @@ const Subscribe = () => {
             console.log('Error message', data)
             
 
-        /*OM ALLT KUND SKICKAR IN OVAN ÄR KORREKT KOMMER NEDAN:*/
+      
         if (res.ok) {
             setSubmitted(true)
-            setFormData({  /*NOLLSTÄLLER FORMULÄRET*/
+            setFormData({ 
                     email: ''})
             setSubmitAttempted(false);
                   }
