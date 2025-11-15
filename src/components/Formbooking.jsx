@@ -36,7 +36,7 @@ const StorageForm = () => {
             }
 
             else if (name === 'selectedUnit' && !/^[A-Z][0-9]+$/.test(value)) {
-                error = "selectedUnit must start with a capital letter followed by numbers. (e.g. 'A12')"
+                error = "Must start with a capital letter followed by numbers. (e.g. 'A12')"
             }
 
             else if (name === 'purpose' && !/^[A-Öa-ö0-9\s, ]+$/.test(value)) {
@@ -66,7 +66,7 @@ const StorageForm = () => {
         if (!formData.selectedUnit.trim()) {
             newErrors.selectedUnit = "Unit is required."
         } else if (!/^[A-Z][0-9]+$/.test(formData.selectedUnit)) {
-            newErrors.selectedUnit = "Unit must start with a capital letter followed by numbers. (e.g. 'A12')"
+            newErrors.selectedUnit = "Must start with a capital letter followed by numbers. (e.g. 'A12')"
         }
 
         if (!formData.purpose.trim()) {
