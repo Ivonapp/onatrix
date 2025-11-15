@@ -182,7 +182,9 @@ const StorageForm = () => {
                                 <input
                                 type="text"
                                 name="selectedUnit"
-                                value={formData.unit}
+                                value={formData.selectedUnit
+                                    
+                                }
                                 onChange={handleChange}
                                 className={`input ${errors.selectedUnit && submitAttempted ? 'error' : ''}`} /*CHATGPT hjälpte mig med denna raden: {`input ${errors.phoneNumber && submitAttempted ? 'error' : ''}`}*/
                                 placeholder="Choose Unit"/>
